@@ -13,8 +13,8 @@ const CreatePassword = ()=>{
     const [characters, checkOpt ,hookData, submit] = useForm(data,check,formRef) // Hook con funcion de password
 
     const copyToClipBoard =()=>{
-        
         navigator.clipboard.writeText(password)
+        alert('¡Password copiada!')
     }
 
     useEffect(()=>{
