@@ -12,6 +12,11 @@ const CreatePassword = ()=>{
     const [ handlerCheck, handlerNum, check, data ] = useInput() //Hook con funciones handler y state check
     const [characters, checkOpt ,hookData, submit] = useForm(data,check,formRef) // Hook con funcion de password
 
+    const copyToClipBoard =()=>{
+        
+        navigator.clipboard.writeText(password)
+    }
+
     useEffect(()=>{
         setPassword(hookData)
     },[hookData])
@@ -19,7 +24,14 @@ const CreatePassword = ()=>{
     return(
         <>
         <div className="passwordGenerator">
-            <div className="passwordContainer"><p>{password}</p></div>
+            <div className="passwordContainer">
+                <p>{password}</p>
+                <div>
+                    <button onClick={copyToClipBoard} className="copyButton">
+                        <span className="material-icons copyIcon">content_copy</span>
+                    </button>
+                </div>
+            </div>
             <Form submitFunc={submit} reference={formRef}>
                 <Field type="number" name="characters" id="characters" value={data.characters} handlerFunction={handlerNum} label="Cantidad de Caracteres" />
                 <Field type="checkbox" name="checkOption" id="mayus" value={check.mayus} label="Mayusculas?" handlerFunction={handlerCheck}/>

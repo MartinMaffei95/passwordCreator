@@ -28,27 +28,60 @@ body {
   height: 90vh;
   width: 90vw;
   box-shadow: 0 0 25px 5px rgb(22, 26, 32);
+  border-radius: 5px;
   gap: 5%;
+  
 }
 
 .passwordContainer{
   background: #09265d;
+  border-radius: 5px;
   margin-top: 5%;
   height: 20%;
   width: 80%;
+  /* padding: 5%; */
   display: flex;
   align-self: center;
   justify-content: center;
+  position: relative;
+  /* gap: 2%; */
 }
 
 .passwordContainer p{
   font-family: consolas;
   color: rgb(255, 255, 255);
   letter-spacing: 2px;
+  position: relative;
+  height: 100%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
   text-align: center;
-  align-self: center;
+  justify-content: center;
+  word-wrap: break-word ;
+  overflow: auto;
 }
 
+.copyButton{
+  align-self: center;
+  background: #09265d;
+  border: none;
+  color:white;
+  height: 100%;
+  border-radius: 5px;
+  /* width: 150%; */
+  transition: background-color .2s;  
+
+}
+
+.copyButton:hover{
+  background: #1553c7;
+}
+
+.copyIcon{
+  
+}
 .passwordForm{
   display: flex;
   flex-direction: column;
@@ -77,7 +110,7 @@ body {
   border:none;
   color: rgb(255, 255, 255);
   font-family: consolas;
-  text-align: center;
+  /* text-align: center; */
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
@@ -92,10 +125,15 @@ body {
 }
 
 .SubmitContainer__button{
-  background: none;
-  color: rgb(255, 255, 255);
+  background: rgb(255, 255, 255);
+  color: none;
   font-size: 1.5rem;
   border: solid 2px rgb(255, 255, 255);
-  /* height: 200%;
-  width: 80%; */
+  border-radius: 5px;
+  margin-top: 5%;
+  height: 150%;
+  width: 100%;
 }
+
+
+
