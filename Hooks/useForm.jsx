@@ -1,20 +1,24 @@
-import { useRef } from "react"
+import { useEffect, useRef, useState } from "react"
+import { generatePass, validate } from "../Hooks/generatePass"
     
-const useForm =(data)=>{
+const useForm =(characters,checkOpt,ref)=>{
 
+    const [data , setData] = useState('Aqui se generara el password')
 
-    const reference = useRef()
-
-        const submit = (e)=>{
-            
-            e.preventDefault()
-            console.log(reference.current,'click en generar')
-            // setData({
-
-            // })
+    const submit =(e)=>{
+        e.preventDefault()
+        if(validate(ref)){
+            setData(generatePass(characters,checkOpt)) 
+        }else{
+            // console.log('No hay nada seleccionado')
+            setData('Seleccioná al menos UNA opcion')
         }
+    }
 
-    return [data, reference, submit]
+    return [characters,
+            checkOpt,
+            data,
+            submit]
 }
 
 export default useForm

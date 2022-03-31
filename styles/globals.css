@@ -86,8 +86,9 @@ body {
 
 .SubmitContainer{
   align-self: center;
-  margin-top: 5%;
-  width: 100%;
+  display: flex;
+  /* margin-top: 5%; */
+  /* width: 100%; */
 }
 
 .SubmitContainer__button{
@@ -95,7 +96,6 @@ body {
   color: rgb(255, 255, 255);
   font-size: 1.5rem;
   border: solid 2px rgb(255, 255, 255);
-  height: 200%;
-  width: 100%;
-
+  /* height: 200%;
+  width: 80%; */
 }
